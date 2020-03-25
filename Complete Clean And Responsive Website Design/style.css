@@ -1,0 +1,647 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    text-decoration: none;
+}
+
+#loading {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgb(31, 28, 28) url('./images/loading.gif') no-repeat center;
+    z-index: 100000000;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 1000px;
+}
+
+header {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 100px;
+    z-index: 100;
+    transition: 0.6s;
+}
+
+header.sticky {
+    padding: 5px 100px;
+    background: #fff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+header .logo {
+    position: relative;
+    font-weight: 700;
+    color: #fff;
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.6s;
+}
+
+header ul {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header ul li {
+    position: relative;
+    list-style: none;
+}
+
+header ul li a {
+    position: relative;
+    margin: 0 15px;
+    color: #fff;
+    font-weight: 900;
+    transition: 0.6s;
+    display: inline-block;
+    transition: 0.6s;
+    padding: 10px;
+}
+
+header ul li a:hover {
+    color: rgb(0, 217, 255);
+}
+
+header.sticky .logo,
+header.sticky ul li a {
+    color: #000;
+}
+
+header.sticky ul li a:hover {
+    background: #000;
+    color: rgb(0, 217, 255);
+    border-radius: 8px;
+}
+
+.banner {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background: url(./images/bg.jpg);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner h2 {
+    color: #fff;
+    font-size: 90px;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1em;
+}
+
+.banner h2 span {
+    color: #4978ff;
+
+}
+
+.sec {
+    background: #fff;
+    padding: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sec .content {
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+
+.sec .content .maw800p {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.sec .content .maw800p h3 {
+    font-size: 40px;
+    font-weight: 200;
+    margin-bottom: 10px;
+}
+
+.sec .content .maw800p p {
+    position: relative;
+    font-size: 18px;
+    font-weight: 300;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    line-height: 25px;
+}
+
+.btn {
+    position: relative;
+    display: inline-block;
+    padding: 10px 30px;
+    background: #000;
+    color: #fff;
+    border: 1px solid transparent;
+    transition: 0.5s;
+}
+
+.btn:hover {
+    border: 1px solid #000;
+    background: #fff;
+    color: #000;
+}
+
+.services {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 30px;
+    max-width: 100%;
+    margin-top: 40px;
+}
+
+.services .box {
+    width: 300px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}
+
+.services .box .iconbox {
+    margin-top: 25xp;
+}
+
+.services .box .iconbox img {
+    max-width: 70px;
+    margin-bottom: 15px;
+}
+
+.services .box h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.stats {
+    background: #000;
+    padding-top: 250px;
+    margin-top: -250px;
+    padding-bottom: 120px;
+}
+
+.stats h3,
+.stats p {
+    color: #fff;
+
+}
+
+.stats .statsBox {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 20px;
+    min-width: 100%;
+    margin-top: 40px;
+}
+
+.statsBox h2 {
+    color: #ffffff;
+    font-style: 36px;
+}
+
+.statsBox h4 {
+    color: #ffffff;
+    font-style: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.workBox {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-column-gap: 120px;
+    grid-row-gap: 30px;
+    max-width: 100%;
+    margin-top: 40px;
+}
+
+.workBox .brand {
+    position: relative;
+    background: #4978ff;
+    min-height: 300px;
+    width: 350px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.workBox .brand:hover {
+    transition: 0.5s;
+    background: #000;
+}
+
+.workBox .brand a {
+    color: rgba(255, 255, 255, 0.4);
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+.workBox .brand:hover a {
+    color: rgba(255, 255, 255, 1);
+}
+
+.team {
+    height: 100vh;
+}
+
+.team .content {
+    margin-top: -100px;
+}
+
+.teamBox {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 30px;
+    max-width: 100%;
+    margin-top: 100px;
+}
+
+.teamBox .member {
+    position: relative;
+    background: #000;
+    min-height: 300px;
+    width: 250px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 10px 8px rgba(0, 0, 0, 0.2),
+        0 0 15px 16px rgba(0, 0, 0, 0.1);
+}
+
+.member:hover {
+    box-shadow: 0 0 10px 8px rgba(0, 0, 0, 0.3),
+        0 0 15px 16px rgba(0, 0, 0, 0.2);
+}
+
+.teamBox .member .imgBox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.teamBox .member .imgBox img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.teamBox .member .details {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+    transition: 0.2s;
+    opacity: 0;
+}
+
+.teamBox .member:hover .details {
+
+    opacity: .8;
+}
+
+.teamBox .member .details h2 {
+    color: #fff;
+    text-transform: uppercase;
+    font-style: 20px;
+    letter-spacing: 1px;
+    line-height: 35px;
+}
+
+.teamBox .member .details span {
+    display: block;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.contact {
+    height: calc(100vh - 53px);
+    background: #000;
+}
+
+.contact h3,
+.contact p {
+    color: #fff;
+}
+
+.contactForm {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+}
+
+.contactForm form {
+    width: 100%;
+}
+
+.contactForm .row100 {
+    display: flex;
+    width: 100%;
+}
+
+.contactForm .row100 .inputBox50 {
+    width: 50%;
+    margin: 0 20px;
+}
+
+.contactForm .row100 .inputBox100 {
+    width: 100%;
+    margin: 0 20px;
+}
+
+.contactForm .row100 input,
+.contactForm .row100 textarea {
+    position: relative;
+    border: none;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+    background: transparent;
+    width: 100%;
+    padding: 10px 0;
+    outline: none;
+    font-size: 18px;
+    font-weight: 300;
+    margin: 20px 0;
+    resize: none;
+}
+
+.contactForm .row100 input:focus,
+.contactForm .row100 textarea:focus {
+    transition: 0.5;
+    border-bottom: 1px solid rgb(0, 217, 255);
+}
+
+.contactForm .row100 textarea {
+    height: 100px;
+}
+
+.contactForm .row100 input::placeholder,
+.contactForm .row100 textarea::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.contactForm .row100 input[type="submit"] {
+    background: #fff;
+    color: #000;
+    border: 2px solid transparent;
+    max-width: 50%;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 100px;
+
+}
+
+.contactForm .row100 input[type="submit"]:hover {
+    transition: 0.4s;
+    background: rgb(0, 217, 255);
+    color: #000;
+    border: 2px solid rgb(0, 217, 255);
+}
+
+.sci {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0;
+}
+
+.sci ul {
+    display: flex;
+}
+
+.sci ul li {
+    list-style: none;
+}
+
+.sci ul li a {
+    display: inline-block;
+    margin: 0 30px;
+}
+
+.sci ul li a img {
+    filter: invert(1);
+    max-width: 40px;
+}
+
+.sci ul li a:hover img {
+    opacity: 0.5;
+}
+
+.copyright a {
+    color: #fff;
+}
+
+.copyright:hover a {
+    color: rgb(0, 162, 255);
+}
+
+.toggle {
+    display: none;
+}
+
+@media (max-width:992px) {
+    .toggle {
+        display: block;
+        position: relative;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+    }
+
+    .toggle:before {
+        content: '';
+        position: absolute;
+        top: 4px;
+        width: 100%;
+        height: 2px;
+        background: #000;
+        z-index: 10000;
+        box-shadow: 0 10px 0 #000;
+        transition: 0.5s;
+    }
+
+    .toggle:after {
+        content: '';
+        position: absolute;
+        bottom: 4px;
+        width: 100%;
+        height: 2px;
+        background: #000;
+        z-index: 10000;
+        transition: 0.5s;
+    }
+
+    header,
+    header.sticky {
+        padding: 5px 50px;
+        background: #fff;
+    }
+
+    header ul {
+        position: absolute;
+        top: 48.5px;
+        right: 0px;
+        width: 100%;
+        height: 100vh;
+        text-align: center;
+        overflow: auto;
+        background: #fff;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    header.active ul {
+        visibility: visible;
+        opacity: 1;
+        display: block;
+        padding-top: 20px;
+    }
+
+    header.active ul li a {
+        display: inline-block;
+        margin: 10px 0;
+        font-size: 20px;
+    }
+
+    header .logo,
+    header ul li a {
+        color: #000;
+    }
+
+    .banner {
+        background-position: center;
+    }
+
+    .banner h2 {
+        font-size: 60px;
+        padding: 0 50px;
+    }
+
+    .sec {
+        padding: 10px 50px 50px 50px;
+    }
+
+    .services .box {
+        width: 100%;
+    }
+
+    .stats {
+        padding-top: 250px;
+        margin-top: 0px;
+    }
+
+    .team .content {
+        margin-top: 100px;
+    }
+
+    .workBox .brand {
+        min-height: 250px;
+        width: 250px;
+    }
+
+    .team {
+        margin-bottom: 100px;
+    }
+
+    .row100 {
+        flex-direction: column;
+    }
+
+    .contactForm .row100 .inputBox50,
+    .contactForm .row100 .inputBox100 {
+        width: 100%;
+        margin: 0;
+    }
+    .sci{
+        margin: 20px;
+    }
+    .sci ul li a img{
+        font-size: 24px;
+    }
+    h3{
+        font-size: 36px;
+    }
+}
+
+@media (max-width:630px) {
+    .workBox .brand {
+        min-height: 150px;
+        width: 350px;
+    }
+
+    .team {
+        margin-top: 350px;
+        margin-bottom: 450px;
+    }
+}
+@media (max-width:462px) {
+    .about{
+        margin-top: 40px;
+    }
+    .portfolio{
+        margin-top: 50px;
+    }
+    .team {
+        margin-top: 400px;
+        margin-bottom: 470px;
+    }
+    .workBox{
+        grid-gap: 10px;
+    }
+    .workBox .brand {
+        min-height: 120px;
+        width: 100%;
+    }
+
+    .contact {
+        padding-top: 90px;
+        padding-bottom: 100px;
+    }
+}
