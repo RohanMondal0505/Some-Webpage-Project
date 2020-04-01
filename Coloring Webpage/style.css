@@ -65,31 +65,49 @@
 .banner header .toggle {
     position: relative;
     width: 36px;
-    height: 28px;
+    height: 30px;
     cursor: pointer;
 }
 
 .banner header .toggle span {
     position: absolute;
-    height: 5px;
+    height: 3px;
     width: 100%;
-    left: 0;
 }
 
 .banner header .toggle .sp-1 {
     top: 0;
     background: rgb(247, 4, 4);
+    transition: transform .4s ease;
 }
 
 .banner header .toggle .sp-2 {
     top: 50%;
     transform: translateY(-50%);
     background: rgb(60, 255, 0);
+    transition: opacity .4s ease;
 }
 
 .banner header .toggle .sp-3 {
     background: rgb(247, 4, 4);
     bottom: 0;
+    transition: transform .4s ease;
+}
+
+.banner header .toggle.active .sp-2 {
+    opacity: 0;
+}
+
+.banner header .toggle.active .sp-1 {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.banner header .toggle.active .sp-3 {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
 }
 
 .about {
@@ -466,9 +484,11 @@ P {
         flex-direction: column-reverse;
         text-align: center;
     }
-    .footer ul{
+
+    .footer ul {
         margin-bottom: 20px;
     }
+
     .footer ul li,
     P {
         margin: 0 10px;
