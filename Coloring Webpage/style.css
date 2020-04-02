@@ -4,7 +4,9 @@
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
 }
-
+html{
+    scroll-behavior: smooth;
+}
 .banner {
     position: relative;
     width: 100%;
@@ -67,31 +69,29 @@
     width: 36px;
     height: 30px;
     cursor: pointer;
+    z-index: 10000;
 }
 
 .banner header .toggle span {
     position: absolute;
+    display: block;
     height: 3px;
     width: 100%;
+    transition: all 0.5s ease;
 }
 
 .banner header .toggle .sp-1 {
-    top: 0;
-    background: rgb(247, 4, 4);
-    transition: transform .4s ease;
+    background: red;
 }
 
 .banner header .toggle .sp-2 {
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgb(60, 255, 0);
-    transition: opacity .4s ease;
+    margin-top: 11px;
+    background: rgb(5, 255, 5);
 }
 
 .banner header .toggle .sp-3 {
-    background: rgb(247, 4, 4);
-    bottom: 0;
-    transition: transform .4s ease;
+    margin-top: 22px;
+    background: red;
 }
 
 .banner header .toggle.active .sp-2 {
@@ -99,16 +99,59 @@
 }
 
 .banner header .toggle.active .sp-1 {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(45deg);
+    margin-top: 10px;
+    transform: rotate(135deg);
 }
 
 .banner header .toggle.active .sp-3 {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(-45deg);
+    margin-top: 10px;
+    transform: rotate(-135deg);
 }
+
+.banner header .menu {
+    background: rgba(52, 117, 202, 0.6);
+    position: absolute;
+    right: 90px;
+    top: 30px;
+    width: 300px;
+    display: none;
+}
+
+.banner header .menu.dis {
+    display: block;
+}
+
+.banner header .menu ul {
+    width: 100%;
+    list-style: none;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.banner header .menu ul li {
+    position: relative;
+    width: 100%;
+    padding: 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.banner header .menu ul li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 20px;
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+.banner header .menu ul li a:hover {
+    color: rgb(250, 117, 117);
+}
+
+.banner header .menu ul li:hover {
+    background: rgba(52, 117, 202, 1);
+
+}
+
 
 .about {
     position: relative;
@@ -383,7 +426,32 @@ P {
 .footer ul li:nth-child(4) a i:hover {
     color: #0e76a8;
 }
-
+.topIcon{
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #00acee;
+    color: #fff;
+    font-size: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    animation: ani 1s linear infinite alternate-reverse;
+}
+@keyframes ani{
+    0%
+    {
+        box-shadow: 0 0 5px rgb(255, 255, 255);
+    }
+    100%
+    {
+        box-shadow: 0 0 25px rgb(255, 255, 255);
+    }
+}
 @media (max-width:1300px) {
 
     .testimonial .container .contentBx {
@@ -412,7 +480,10 @@ P {
     .banner .content p {
         font-size: 16px;
     }
-
+    .banner header .menu {
+        right: 40px;
+        top: 0px;
+    }
     .about {
         flex-direction: column;
     }

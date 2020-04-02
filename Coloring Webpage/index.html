@@ -22,13 +22,24 @@
 <body>
 
     <!-- Banner -->
-    <div class="banner">
+    <div class="banner" id="Home">
         <header>
             <a href="#" class="logo">Banner Name</a>
             <div class="toggle">
                 <span class="sp-1"></span>
                 <span class="sp-2"></span>
                 <span class="sp-3"></span>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="#Home">Home</a></li>
+                    <li><a href="#About">About</a></li>
+                    <li><a href="#Services">Services</a></li>
+                    <li><a href="#Technology">Technology</a></li>
+                    <li><a href="#Client">Client</a></li>
+                    <li><a href="#Testimonial">Testimonial</a></li>
+                    <li><a href="#Contact">Contact</a></li>
+                </ul>
             </div>
         </header>
         <img src="./images/99-films-Va-mMHLqZYI-unsplash.jpg" alt="">
@@ -40,7 +51,7 @@
         </div>
     </div>
     <!-- About -->
-    <section class="about">
+    <section class="about" id="About">
         <div class="contentBx">
             <he class="heading">About Us</he>
             <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur et, odit harum
@@ -59,7 +70,7 @@
         <div class="imgBx"></div>
     </section>
     <!-- Services -->
-    <section class="services">
+    <section class="services" id="Services">
         <he class="heading">Our Services</he>
         <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, fuga quae itaque ea error
             iste,provident nisi dicta veniam quas eos harum eaque nulla doloremque, minus aperiam possimus quia eius
@@ -90,7 +101,7 @@
         </div>
     </section>
     <!-- Technology -->
-    <section class="technology">
+    <section class="technology" id="Technology">
         <div class="contentBx">
             <he class="heading">We use cutting edge technology</he>
             <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, fuga quae itaque ea
@@ -109,7 +120,7 @@
         </div>
     </section>
     <!-- Client -->
-    <section class="client">
+    <section class="client" id="Client">
         <h2 class="heading">Our Client</h2>
         <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, fuga quae itaque ea
             error
@@ -129,7 +140,7 @@
         </div>
     </section>
     <!-- Testimonial -->
-    <section class="testimonial">
+    <section class="testimonial" id="Testimonial">
         <h2 class="heading">What Our Client Says</h2>
         <div class="container">
             <div class="contentBx">
@@ -164,7 +175,7 @@
         </div>
     </section>
     <!-- Contact -->
-    <section class="contact">
+    <section class="contact" id="Contact">
         <h2 class="heading">Contect Us</h2>
         <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, fuga quae itaque ea
             error
@@ -199,9 +210,11 @@
             </div>
         </div>
         <div class="imgBx imgBx2"></div>
+
     </section>
+    <a href="#Home"><i class="fas fa-arrow-up topIcon"></i></a>
     <!-- Footer -->
-    <section class="footer">
+    <section class="footer">  
         <p class="text">Design & Developed By &copy; <a href="#">Rohan</a></p>
         <ul>    
             <p class="text">Follow Us on : </p>
@@ -215,6 +228,11 @@
         $(document).ready(function(){
             $('.toggle').click(function(){
                 $(this).toggleClass('active');
+                $('.menu').toggleClass('dis');
+            });
+            $('.menu ul li a').click(function(){
+                $('.menu').removeClass('dis');
+                $('.toggle').removeClass('active');
             });
         });
     </script>
